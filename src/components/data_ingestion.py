@@ -20,8 +20,6 @@ class Data_ingestion:
             df=pd.read_csv("data/stud.csv")
             df.to_csv(self.ingestion.raw_dataset_path,header=True,index=False)
             logging.info("Train-Test set split initiated")
-            
-
             train_set,test_set=train_test_split(df,test_size=0.25,random_state=42)
             train_set.to_csv(self.ingestion.train_dataset_path,header=True,index=False)
             test_set.to_csv(self.ingestion.test_dataset_path,header=True,index=False)
@@ -31,6 +29,7 @@ class Data_ingestion:
 
         except Exception as e:
             raise custom_exception(e,sys)
+        
 if __name__=="__main__":
      Obj=Data_ingestion()
      Obj.ingestion_intiation()
