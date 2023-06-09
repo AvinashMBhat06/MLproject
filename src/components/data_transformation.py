@@ -8,10 +8,10 @@ from src.logger import logging
 import pandas as pd
 from dataclasses import dataclass
 import os
-
+from src.utils import save_bin
 @dataclass
 class data_transformationConfig:
-    preprocessor_obj_file_path=os.path.join('artifacts',"proprocessor.pkl")
+    preprocessor_obj_file_path=os.path.join('Datasets',"proprocessor.pkl")
 class DataTransformation:
     def __init__(self):
         self.data_transformation_config=data_transformationConfig()
@@ -68,14 +68,11 @@ class DataTransformation:
 
                 logging.info("Obtaining preprocessing object")
                 preprocessing_obj=self.data_transformer_object()
-                train_transformed=preprocessing_obj.fit_transformed(train_path)
                 target_column_name="math_score"
                 numerical_columns = ["writing_score", "reading_score"]
-
-                input_feature_train_df=train_pd.drop(columns=[target_column_name],axis=1)
-
                 target_feature_train_df=train_pd[target_column_name]
                 target_feature_test_df=test_pd[target_column_name]
+                input_feature_train_df=train_pd.drop(columns=[target_column_name],axis=1)
                 input_feature_test_df=test_pd.drop(columns=[target_column_name],axis=1)
 
                 logging.info(
@@ -84,6 +81,12 @@ class DataTransformation:
 
                 input_feature_train_arr=preprocessing_obj.fit_transform(input_feature_train_df)
                 input_feature_test_arr=preprocessing_obj.transform(input_feature_test_df)
+
+                
+                logging.info(f"Saved preprocessing object.")
+
+                save_bin(file_path=self.data_transformation_config.preprocessor_obj_file_path,obj=preprocessing_obj)
+
 
             except Exception as e:
                 raise custom_exception(e,sys)
