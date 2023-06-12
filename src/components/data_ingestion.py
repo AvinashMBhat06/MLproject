@@ -7,6 +7,8 @@ import pandas as pd
 from dataclasses import dataclass
 from src.components.data_transformation import data_transformationConfig
 from src.components.data_transformation import DataTransformation
+from src.components.model_trainer import Model_trainerconfig
+from src.components.model_trainer import model_trainer
 
 @dataclass
 class Data_ingesion_pathdata:
@@ -37,9 +39,8 @@ if __name__=="__main__":
      data_ingestion_Obj=Data_ingestion()
      train_data_path,test_data_path=data_ingestion_Obj.ingestion_intiation()
      data_transformation_Obj=DataTransformation()
-     data_transformation_Obj.initiate_data_transformation(train_data_path,test_data_path)
+     train_data,test_data,_=data_transformation_Obj.initiate_data_transformation(train_data_path,test_data_path)
+     model_trainer_obj=model_trainer()
+     model_trainer_obj.iniate_model_trainer(train_data,test_data)
 
-
-     print("done")
-
-    
+   
