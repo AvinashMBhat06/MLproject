@@ -27,8 +27,17 @@ def evaluate_models(X_train,y_train,X_test,y_test,models,param):
                test_predict=model.predict(X_test)
                test_data_score=r2_score(y_test,test_predict)
                score[list(models.keys())[index]]=test_data_score
-          return score
+
+          return score 
 
 
      except Exception as e:
           raise custom_exception(e,sys)
+     
+def loadObject(file_path):
+     try:
+          with open(file_path,"rb") as file_obj:
+               return dill.load(file_obj)
+          
+     except Exception as e:
+          raise custom_exception(e, sys)

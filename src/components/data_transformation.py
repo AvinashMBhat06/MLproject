@@ -71,7 +71,6 @@ class DataTransformation:
                 logging.info("Obtaining preprocessing object")
                 preprocessing_obj=self.data_transformer_object()
                 target_column_name="math_score"
-                numerical_columns = ["writing_score", "reading_score"]
                 target_feature_train_df=train_pd[target_column_name]
                 target_feature_test_df=test_pd[target_column_name]
                 input_feature_train_df=train_pd.drop(columns=[target_column_name],axis=1)
