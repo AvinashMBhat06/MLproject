@@ -5,7 +5,7 @@ def html_generator(response,file_path):
     with open(file_path,"w") as file:
         file.write(response)
     webbrowser.open(file_path)
-openai.api_key ="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"
+# openai.api_key ="Your OPENAI API KEY"
 def get_completion(prompt, model="gpt-3.5-turbo"):
     messages = [{"role": "user", "content": prompt}]
     response = openai.ChatCompletion.create(
