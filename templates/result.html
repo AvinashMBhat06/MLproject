@@ -18,18 +18,26 @@
 			margin-top: 50px;
 			margin-bottom: 30px;
 			font-family:initial;
+			
+		}
+		h4{
+			text-align: center;
+			margin-top: 50px;
+			margin-bottom: 30px;
+			font-family:initial;
 		}
 		h3{
-			font-family:Georgia, serif;
-			background-color: #4CAF50;
+			font-family: Georgia, serif;
+			background-color: #2ab32e;
 			color: white;
 			text-align: center;
-			padding: 10px 20px;
+			margin-top: 50px;
+			margin-bottom: 30px;
+			padding: 10px 0px;
 			border: none;
 			border-radius: 5px;
 			cursor: pointer;
 			display: block;
-			margin: 50px auto;
 			font-size: 18px;
 		}
 
@@ -94,7 +102,6 @@
 			border: 1px solid #333;
 			width: 80%;
 			margin-bottom: 100px;
-			
 		}
 
 		tr:hover {
@@ -116,7 +123,6 @@
 			border-radius: 5px;
 			cursor: pointer;
 			display: block;
-			font-family: Georgia, serif;
 			margin: 50px auto;
 			font-size: 18px;
 		}
@@ -175,7 +181,7 @@
 				<td>88</td>
 			</tr>
 			<tr>
-				<td>Male</td>
+				<td>male</td>
 				<td>Group A</td>
 				<td>Master's Degree</td>
 				<td>Free/Reduced</td>
@@ -195,7 +201,7 @@
 				<td>58</td>
 			</tr>
 			<tr>
-				<td>Male</td>
+				<td>male</td>
 				<td>Group C</td>
 				<td>Some College</td>
 				<td>Standard</td>
@@ -206,7 +212,35 @@
 			</tr>
 		</tbody>
 	</table>
-	<button onclick="window.location.href='home.html'">Test the Model</button>
+	<button onclick="window.location.href='home.html'">Try more Predictions</button>
+	<h3>The Writing score for your dataset is {{ L[0] }} </h3>
+    <table>
+		<h4>Your Dataset</h4>
+    <thead>
+        <tr>
+            <th>Gender</th>
+            <th>Race/Ethnicity</th>
+            <th>Parental Education</th>
+            <th>Lunch</th>
+            <th>Test Preparation Course</th>
+            <th>Math Score</th>
+            <th>Reading Score</th>
+            <th>Writing Score</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{L[1]}}</td>
+            <td>{{L[2]}}</td>
+            <td>{{L[3]}}</td>
+            <td>{{L[4]}}</td>
+            <td>{{L[5]}}</td>
+            <td>{{L[6]}}</td>
+            <td>{{L[7]}}</td>
+            <td>{{L[-1]}}</td>
+        </tr>
+    </tbody>
+    </table>
 </body>
 
 </html>

@@ -26,8 +26,8 @@ def predict_datapoint():
         feature=data.coverting_datato_df_format()
         prediction=Predict_pipeline()
         predict_score=prediction.predict(feature)
-        return render_template('home.html',results=predict_score[0])
-
+        rounded_score=round(predict_score[0],2)
+        return render_template('result.html',L=[predict_score[0],request.form.get('gender').title(),request.form.get('ethnicity').title(),request.form.get('parental_level_of_education').title(),request.form.get('lunch').title(),request.form.get('test_preparation_course').title(),float(request.form.get('writing_score')),float(request.form.get('reading_score')),rounded_score])
 
 if __name__=="__main__":
     web.run(host="0.0.0.0",debug=True)   
