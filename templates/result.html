@@ -75,7 +75,7 @@
 		}
 
 		p:hover:before {
-			content:"This project is a ML prediction model aims to predict the scores students will get in a particular course based on various factors such as gender, parental education, ethnicity, and more. Below are a few of the thousands of datasets that the model has been trained upon.";
+			content:"This project is a ML prediction model aims to predict the math scores students will get in a particular course based on various factors such as gender, parental education, ethnicity, and more. Below are a few of the thousands of datasets that the model has been trained upon.";
 			position: absolute;
 			font-size: 20px;
 			top: 50%;
@@ -102,6 +102,7 @@
 			border: 1px solid #333;
 			width: 80%;
 			margin-bottom: 100px;
+
 		}
 
 		tr:hover {
@@ -213,7 +214,7 @@
 		</tbody>
 	</table>
 	<button onclick="window.location.href='home.html'">Try more Predictions</button>
-	<h3>The Writing score for your dataset is {{ L[0] }} </h3>
+	<h3>The Math score for your dataset is {{ L[0] }} </h3>
     <table>
 		<h4>Your Dataset</h4>
     <thead>
@@ -235,9 +236,9 @@
             <td>{{L[3]}}</td>
             <td>{{L[4]}}</td>
             <td>{{L[5]}}</td>
-            <td>{{L[6]}}</td>
-            <td>{{L[7]}}</td>
             <td>{{L[-1]}}</td>
+            <td>{{L[7]}}</td>
+            <td>{{L[6]}}</td>
         </tr>
     </tbody>
     </table>
