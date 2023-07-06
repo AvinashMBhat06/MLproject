@@ -1,8 +1,8 @@
 from flask import Flask,request,render_template
 from src.pipeline.prediction_pipeline import CustomData,Predict_pipeline
 
-website=Flask(__name__)
-web=website
+app=Flask(__name__)
+web=app
 @web.route('/')
 
 def index():
