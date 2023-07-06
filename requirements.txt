@@ -1,12 +1,9 @@
 flask
-gunicorn
-seaborn
 numpy
 pandas
 scikit-learn
 dill
 xgboost
 catboost
-openai
 Ipython
 -e .
