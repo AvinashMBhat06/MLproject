@@ -1,5 +1,4 @@
 from setuptools import setup, find_packages
-from typing import List
 def get_requirement(path):
     hyphen_e_dot='-e .'
     with open(path) as file:
